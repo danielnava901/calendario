@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Portada from "./components/container/Portada";
+import PortadaEnero from "./components/container/PortadaEnero";
+import Enero from "./components/container/Enero";
+import PortadaFebrero from "./components/container/PortadaFebrero";
+import Febrero from "./components/container/Febrero";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Portada />
+      <PortadaEnero />
+      <Enero />
+      <PortadaFebrero/>
+      <Febrero/>
     </div>
   );
 }
