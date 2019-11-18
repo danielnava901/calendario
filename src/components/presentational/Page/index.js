@@ -23,6 +23,7 @@ const Page = (props) => {
 				 height: "100vh",
 				 marginTop: "0",
 				 position: "relative",
+				 paddingBottom: "50px",
 				 color: `${props.textColor}`
 			 }}>
 			<div style={circleStyle} />

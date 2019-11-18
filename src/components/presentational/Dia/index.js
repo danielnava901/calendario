@@ -4,7 +4,7 @@ const Dia = (props) => {
 	return (
 		<div
 			 style={{
-				height: "100px",
+				height: "80px",
 				 width: "13%"
 			 }}>
 			<div style={{

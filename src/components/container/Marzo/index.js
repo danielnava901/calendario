@@ -7,7 +7,7 @@ import Month from "../../presentational/Month";
 const Marzo = () => {
 	return (
 		<Page bgColor="white"
-			  circleBgColor="rgb(100,110,165)"
+			  circleBgColor="rgb(216,237,225)"
 			  circleStyle={{
 				  right: "60px",
 				  top: "20px"
@@ -16,11 +16,11 @@ const Marzo = () => {
 		>
 			<div >
 				<Month name="Marzo" monthStyle={{
-					right: "unset", bottom: "-95px",
+					right: "unset", bottom: "-55px",
 					top: "unset", left: "10px"
 				}}/>
 
-				<div className="container" >
+				<div className="container">
 					<Row>&nbsp;</Row>
 					<Row>
 
