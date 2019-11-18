@@ -9,10 +9,10 @@ const Portada = () => {
 				flexDirection: "column",
 				justifyContent: "center",
 				alignItems: "center",
-				height: "100%"
+				height: "100%",
+				color: "rgba(20,20,20, 0.9)",
 			}}>
 				<span style={{
-					color: "#151515",
 					fontSize: "15rem",
 					fontFamily: 'BioRhyme, sans-serif',
 				}}>2020</span>
@@ -20,7 +20,7 @@ const Portada = () => {
 				<div style={{
 					display: "flex",
 					width: "50%",
-					justifyContent: "flex-end"
+					justifyContent: "center"
 				}}>
 					<span style={{
 						fontFamily: 'BioRhyme, sans-serif',

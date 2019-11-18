@@ -20,6 +20,7 @@ const Dia = (props) => {
 					top: "10px",
 					fontWeight: "bold",
 					fontFamily: 'Poppins, sans-serif',
+					color: "rgba(20,20,20, 0.8)"
 				}}>{props.day}</div>
 
 			</div>
