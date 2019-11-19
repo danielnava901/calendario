@@ -9,14 +9,21 @@ import Marzo from "./components/container/Marzo";
 
 function App() {
   return (
-    <div >
-      <Portada />
-      <PortadaEnero />
-      <Enero />
-      <PortadaFebrero/>
-      <Febrero/>
-      <PortadaMarzo/>
-      <Marzo/>
+    <div className="container">
+      <div className="row">
+        <section className="col col-sm-9 section-primary">
+          <Portada />
+          <PortadaEnero />
+          <Enero />
+          <PortadaFebrero/>
+          <Febrero/>
+          <PortadaMarzo/>
+          <Marzo/>
+        </section>
+        <section className="col col-sm-3 section-tertiary">
+          ADASDDSADASD
+        </section>
+      </div>
     </div>
   );
 }
