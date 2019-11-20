@@ -3,8 +3,9 @@ import Page from "../../presentational/Page";
 
 const PortadaMes = (props) => {
 	return (
-		<Page bgColor="rgb(58,143,122)"
-			  textColor="rgb(129,192,204)"
+    <Page 
+        bgColor={props.primaryColor}
+			  textColor={props.secondaryColor}
 			  circleBgColor="yellow"
 			  circleStyle={{
 				  right: "60px",
@@ -45,7 +46,9 @@ const PortadaMes = (props) => {
 };
 
 PortadaMes.defaultProps = {
-  name: "[Mes]"
+  name: "[Mes]",
+  primaryColor: "rgb(58,143,122)",
+  secondaryColor: "rgb(129,192,204)"
 };
 
 export default PortadaMes;
