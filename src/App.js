@@ -17,11 +17,47 @@ const year = {
     activities: []
   },
   marzo: {
-    days: 30,
+    days: 31,
     daysLastMonth: 28,
     start: 0,
     activities: []
-  }
+  },
+  abril: {
+    days: 30,
+    daysLastMonth: 31,
+    start: 3,
+    activities: {
+      1: [{
+        name: "ejercicio"
+      },{
+        name: "ir a pagar"
+      }],
+      7: [{
+        name: "cumple"
+      }],
+      10: [{
+        name: "Escuela", fecha: ""
+      }]
+    }
+  },
+  mayo: {
+    days: 31,
+    daysLastMonth: 30,
+    start: 5,
+    activities: {
+      1: [{
+        name: "ejer may"
+      },{
+        name: "pelear"
+      }],
+      7: [{
+        name: "carrera"
+      }],
+      10: [{
+        name: "escuela", fecha: ""
+      }]
+    }
+  },
 };
 
 function App() {
@@ -46,7 +82,20 @@ function App() {
                start={year.marzo.start}
                daysLastMonth={year.marzo.daysLastMonth}/>
           <PortadaMes name="Abril" primaryColor="#E04855" secondaryColor="#E9B7C3"/>
+          <Mes name="Abril"
+               days={year.abril.days}
+               start={year.abril.start}
+               daysLastMonth={year.abril.daysLastMonth}
+               activities={year.abril.activities}
+               primaryColor="#E04855" secondaryColor="#E9B7C3"
+               />
           <PortadaMes name="Mayo"/>
+          <Mes name="Mayo"
+               days={year.mayo.days}
+               start={year.mayo.start}
+               daysLastMonth={year.mayo.daysLastMonth}
+               activities={year.mayo.activities}
+               />
           <PortadaMes name="Junio" primaryColor="#E04855" secondaryColor="#E9B7C3" />
         </section>
         <section className="col col-sm-3 section-tertiary">

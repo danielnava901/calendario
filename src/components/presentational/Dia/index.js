@@ -22,7 +22,14 @@ const Dia = (props) => {
 					fontWeight: "bold",
 					fontFamily: 'Poppins, sans-serif',
 					color: "rgba(20,20,20, 0.8)"
-				}}>{props.day}</div>
+				}}>
+					<div>{props.day}</div>
+					{
+						props.activities.map(act => {
+							return <div>{act.name}</div>
+						})
+					}
+				</div>
 
 			</div>
 		</div>
@@ -31,7 +38,8 @@ const Dia = (props) => {
 
 Dia.defaultProps = {
 	dayBorder: "black",
-	index: 0
+	index: 0,
+	activities: []
 };
 
 export default Dia;
