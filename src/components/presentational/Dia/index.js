@@ -3,8 +3,9 @@ import React from 'react';
 const Dia = (props) => {
 	return (
 		<div
+			key={props.index}
 			 style={{
-				height: "80px",
+				height: "89px",
 				 width: "13%"
 			 }}>
 			<div style={{
@@ -29,7 +30,8 @@ const Dia = (props) => {
 };
 
 Dia.defaultProps = {
-	dayBorder: "black"
+	dayBorder: "black",
+	index: 0
 };
 
 export default Dia;

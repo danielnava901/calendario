@@ -2,7 +2,7 @@ import React from 'react';
 
 const Row = (props) => {
 	return (
-		<div className="row"
+		<div className="row" key={props.index}
 			style={{
 				display: "flex",
 				justifyContent: "space-around"
@@ -14,5 +14,8 @@ const Row = (props) => {
 	)
 };
 
+Row.defaultProps = {
+	index: 0
+};
 
 export default Row;

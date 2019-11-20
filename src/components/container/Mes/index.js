@@ -5,6 +5,27 @@ import Row from "../../presentational/Row";
 import Month from "../../presentational/Month";
 
 const Mes = (props) => {
+
+	let weeks = [];
+	let j = 1;
+	for(let i = 1; i <= 5; i++) {
+		let week = [];
+
+		for(let k = 1; k <= 7; k++) {
+			let day = (j - props.start) <= 0 ?
+				(props.daysLastMonth - (props.start - j)) : (
+					(j -props.start > props.days) ? ( 1 - (7-k) ) : (j - props.start)
+				);
+
+			week.push({num: day});
+			j = j + 1;
+		}
+
+		weeks.push(week);
+	}
+
+	console.log("r", weeks);
+
 	return (
 		<Page bgColor="white"
 			  circleBgColor="rgb(129,192,204)"
@@ -17,55 +38,28 @@ const Mes = (props) => {
 				<Month name={props.name} />
 				<div className="container" >
 					<Row>&nbsp;</Row>
-					<Row>
-						<Dia day={29} dayBorder="gray"/>
-						<Dia day={30} dayBorder="gray"/>
-						<Dia day={31} dayBorder="gray"/>
-						<Dia day={1} dayBorder="rgb(58,143,122)"/>
-						<Dia day={2} dayBorder="rgb(58,143,122)"/>
-						<Dia day={3} dayBorder="rgb(58,143,122)"/>
-						<Dia day={4} dayBorder="rgb(58,143,122)"/>
-					</Row>
-					<Row>
-						<Dia day={5} dayBorder="rgb(58,143,122)"/>
-						<Dia day={6} dayBorder="rgb(58,143,122)"/>
-						<Dia day={7} dayBorder="rgb(58,143,122)"/>
-						<Dia day={8} dayBorder="rgb(58,143,122)"/>
-						<Dia day={9} dayBorder="rgb(58,143,122)"/>
-						<Dia day={10} dayBorder="rgb(58,143,122)"/>
-						<Dia day={11} dayBorder="rgb(58,143,122)"/>
-					</Row>
-					<Row>
-						<Dia day={12} dayBorder="rgb(58,143,122)"/>
-						<Dia day={13} dayBorder="rgb(58,143,122)"/>
-						<Dia day={14} dayBorder="rgb(58,143,122)"/>
-						<Dia day={15} dayBorder="rgb(58,143,122)"/>
-						<Dia day={16} dayBorder="rgb(58,143,122)"/>
-						<Dia day={17} dayBorder="rgb(58,143,122)"/>
-						<Dia day={18} dayBorder="rgb(58,143,122)"/>
-					</Row>
-					<Row>
-						<Dia day={19} dayBorder="rgb(58,143,122)"/>
-						<Dia day={20} dayBorder="rgb(58,143,122)"/>
-						<Dia day={21} dayBorder="rgb(58,143,122)"/>
-						<Dia day={22} dayBorder="rgb(58,143,122)"/>
-						<Dia day={23} dayBorder="rgb(58,143,122)"/>
-						<Dia day={24} dayBorder="rgb(58,143,122)"/>
-						<Dia day={25} dayBorder="rgb(58,143,122)"/>
-					</Row>
-					<Row>
-						<Dia day={26} dayBorder="rgb(58,143,122)"/>
-						<Dia day={27} dayBorder="rgb(58,143,122)"/>
-						<Dia day={28} dayBorder="rgb(58,143,122)"/>
-						<Dia day={29} dayBorder="rgb(58,143,122)"/>
-						<Dia day={30} dayBorder="rgb(58,143,122)"/>
-						<Dia day={31} dayBorder="rgb(58,143,122)"/>
-						<Dia day={1} dayBorder="gray"/>
-					</Row>
+						{
+							weeks.map((week, indexWeek) => {
+								console.log("w", week);
+								return <Row index={indexWeek}>
+									{
+										week.map((day, indexDay) => {
+											return <Dia index={indexDay} day={day.num} dayBorder="rgb(58,143,122)"/>
+										})
+									}
+								</Row>
+							})
+						}
 				</div>
 			</div>
 		</Page>
 	);
+};
+
+Mes.defaultProps = {
+	days: 30,
+	start: 0,
+	daysLastMonth: 30
 };
 
 export default Mes;

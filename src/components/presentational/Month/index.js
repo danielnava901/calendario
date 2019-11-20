@@ -15,7 +15,7 @@ const Month = (props) => {
 	return (
 		<div style={monthStyle}>
 			<div className="row">
-				<div className="col col-sm-12">
+				<div className="col col-sm-12 col-md-6">
 					<span style={{
 						fontSize: "12rem",
 						fontFamily: "Questrial, sans-serif"

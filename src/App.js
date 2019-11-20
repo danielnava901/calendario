@@ -1,12 +1,28 @@
 import React from 'react';
 import Portada from "./components/container/Portada";
 import PortadaMes from "./components/container/PortadaMes";
-import PortadaEnero from "./components/container/PortadaEnero";
-import Enero from "./components/container/Enero";
-import PortadaFebrero from "./components/container/PortadaFebrero";
-import Febrero from "./components/container/Febrero";
-import PortadaMarzo from "./components/container/PortadaMarzo";
-import Marzo from "./components/container/Marzo";
+import Mes from "./components/container/Mes";
+
+const year = {
+  enero: {
+    days: 31,
+    start: 3,
+    daysLastMonth: 30,
+    activities: []
+  },
+  febrero: {
+    days: 28,
+    start: 6,
+    daysLastMonth: 31,
+    activities: []
+  },
+  marzo: {
+    days: 30,
+    daysLastMonth: 28,
+    start: 0,
+    activities: []
+  }
+};
 
 function App() {
   return (
@@ -14,18 +30,27 @@ function App() {
       <div className="row">
         <section className="col col-sm-9 section-primary">
           <Portada />
-          <PortadaEnero />
-          <Enero />
-          <PortadaFebrero/>
-          <Febrero/>
-          <PortadaMarzo/>
-          <Marzo/>
+          <PortadaMes name="Enero" primaryColor="rgb(58,143,122)" secondaryColor="rgb(129,192,204)"/>
+          <Mes name="Enero"
+               days={year.enero.days}
+               start={year.enero.start}
+               daysLastMonth={year.enero.daysLastMonth}/>
+          <PortadaMes name="Febrero" primaryColor="rgb(211,46,103)" secondaryColor="rgb(226,137,156)"/>
+          <Mes name="Febrero"
+               days={year.febrero.days}
+               start={year.febrero.start}
+               daysLastMonth={year.febrero.daysLastMonth}/>
+          <PortadaMes name="Marzo" primaryColor="rgb(153,206,176)" secondaryColor="rgb(216,237,225)"/>
+          <Mes name="Marzo"
+               days={year.marzo.days}
+               start={year.marzo.start}
+               daysLastMonth={year.marzo.daysLastMonth}/>
           <PortadaMes name="Abril" primaryColor="#E04855" secondaryColor="#E9B7C3"/>
           <PortadaMes name="Mayo"/>
           <PortadaMes name="Junio" primaryColor="#E04855" secondaryColor="#E9B7C3" />
         </section>
         <section className="col col-sm-3 section-tertiary">
-          ADASDDSADASD
+          SIDEBAR
         </section>
       </div>
     </div>
