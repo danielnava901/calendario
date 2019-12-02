@@ -61,6 +61,11 @@ const year = {
 };
 
 function App() {
+
+  const clickDay = (day, month) => {
+    console.log("day", day, month);
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -88,6 +93,7 @@ function App() {
                daysLastMonth={year.abril.daysLastMonth}
                activities={year.abril.activities}
                primaryColor="#E04855" secondaryColor="#E9B7C3"
+               onClickDay={clickDay}
                />
           <PortadaMes name="Mayo"/>
           <Mes name="Mayo"

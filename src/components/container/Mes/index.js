@@ -67,6 +67,8 @@ const Mes = (props) => {
 												day={day.num} 
 												dayBorder={day.dayBorder}
 												activities={day.activities}
+												onClickDay={props.onClickDay}
+
 												/>
 										})
 									}
@@ -85,7 +87,8 @@ Mes.defaultProps = {
 	daysLastMonth: 30,
 	activities: [],
 	primaryColor:"black", 
-	secondaryColor="gray"
+	secondaryColor:"gray",
+	onClickDay: () => {}
 };
 
 export default Mes;

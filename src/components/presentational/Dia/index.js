@@ -7,7 +7,11 @@ const Dia = (props) => {
 			 style={{
 				height: "89px",
 				 width: "13%"
-			 }}>
+			 }}
+			onClick={() => {
+				props.onClickDay(props);
+			}}
+		>
 			<div style={{
 				border: `1px solid ${props.dayBorder}`,
 				position: "relative",
@@ -39,7 +43,8 @@ const Dia = (props) => {
 Dia.defaultProps = {
 	dayBorder: "black",
 	index: 0,
-	activities: []
+	activities: [],
+	onClickDay: () => {}
 };
 
 export default Dia;
